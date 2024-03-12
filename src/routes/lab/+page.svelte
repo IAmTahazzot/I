@@ -4,10 +4,10 @@
 </script>
 
 <svelte:head>
-  <title>Cases</title>
+  <title>Labs: Experimental cases</title>
 </svelte:head>
 
 <Container>
   <Nav />
-  <h1>Cases</h1>
+  <h1>Labs</h1>
 </Container>

@@ -4,4 +4,19 @@
 
 body {
   height: 100%;
+  background-color: var(--color-white);
+}
+
+@layer base {
+  :root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark: #1e1f24;
+  }
+
+  .dark {
+    --color-white: #000;
+    --color-black: #fff;
+    --color-dark: #f7f7f7;
+  }
 }

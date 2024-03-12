@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: 'class',
 	content: ['./src/**/*.svelte'],
 	theme: {
 		extend: {
 			fontFamily: {
-				'body': ['Inter', 'sans-serif']
+				'display': ['Plus Jakarta Sans Variable', 'sans-serif'],
+				'body': ['Inter Variable', 'sans-serif'],
+
+				// others
+				'inter': ['Inter Variable', 'sans-serif'],
 			}
 		}
 	},

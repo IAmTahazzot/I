@@ -4,10 +4,10 @@
 </script>
 
 <svelte:head>
-  <title>Cases</title>
+  <title>Once upon a time: ...</title>
 </svelte:head>
 
 <Container>
   <Nav />
-  <h1>Cases</h1>
+  <h1>Write your story here...</h1>
 </Container>
