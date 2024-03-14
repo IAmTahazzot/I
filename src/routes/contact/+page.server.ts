@@ -11,7 +11,7 @@ const formSchema = z.object({
 		.max(255, { message: "Don't spam buddy! :)" }),
 	address: z.string().max(255, { message: 'Seriously?' }).optional(),
 	email: z.string().email({ message: 'You must provide a valid email address' }),
-	message: z.string().max(1000).optional(),
+	message: z.string().max(5000, {message: 'Please keep your message short.'}).optional(),
 	options: z.object({
 		createApp: z.boolean().optional(),
 		bugFix: z.boolean().optional(),
