@@ -3,7 +3,6 @@
 	import Nav from '../components/Nav/Nav.svelte';
 	import Hello from '../components/Hello/Hello.svelte';
 	import Intro from '../components/Pages/Home/Intro.svelte';
-	import Oval from '../components/Sketches/Oval.svelte';
 	import CaseBlock from '../components/Case/CaseBlock.svelte';
 
 	import { cases } from '../data/cases';
@@ -38,12 +37,13 @@
 				title={firstFeaturedCase.title}
 				slug={firstFeaturedCase.slug}
 				clientName={firstFeaturedCase.clientName}
-				thumbnail={firstFeaturedCase.thubmnail}
+				thumbnail={firstFeaturedCase.thumbnail}
 				date={firstFeaturedCase.date}
 			/>
 		{/if}
 
 		<InfoBloack
+		  className='my-[40vh]'
 			title="What I do:"
 			type="bullet point"
 			description={`

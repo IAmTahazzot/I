@@ -1,10 +1,31 @@
-<script>
+<script lang='ts'>
+	import { cn } from '$lib/utils';
 	import { MAIL } from '../../data/constants';
+	export let forcedDarkMode: boolean = false;
+
+	const links: { name: string; href: string }[] = [
+		{ name: 'Mail', href: `mailto:${MAIL}` },
+		{ name: 'Github', href: 'https://github.com/iamtahazzot'},
+		{ name: 'Linkedin', href: 'https://linkedin.com/iamtahazzot' },
+		{ name: 'StackOverflow', href: 'https://stackoverflow.com/users/12661546/t%ce%9bh%ce%9bzz%c3%98t' },
+		{ name: 'Contact me', href: '/contact' }
+	];
+
 </script>
 
-<footer class="bg-[#f5f5f7]">
+<footer class={
+	cn(
+		'bg-[#f5f5f7] dark:bg-[#131416]',
+		forcedDarkMode && 'bg-[#131416]'
+	)
+}>
 	<div
-		class="max-w-[980px] mx-auto text-xs -tracking-[0.12px] leading-4 text-neutral-500 font-inter"
+		class={
+			cn(
+				'max-w-[980px] mx-auto text-xs -tracking-[0.12px] leading-4 text-neutral-500 dark:text-neutral-400 font-inter',
+				forcedDarkMode && 'text-neutral-400'
+			)
+		}
 	>
 		<div class="py-5 space-y-4">
 			<p>
@@ -23,17 +44,17 @@
 			</p>
 		</div>
 
-		<div class="footer-block py-5 border-t border-b border-neutral-300">
+		<div class={
+			cn(
+				'footer-block py-5 border-t border-b border-neutral-300',
+				forcedDarkMode && 'border-neutral-800 forcedDarkMode'
+			)
+		}>
 			<ul>
-				<li><span>More contact</span></li>
-				<li><a href={`mailto:${MAIL}`}>Mail</a></li>
-				<li><a href="https://linkedin.com/iamtahazzot">Linkedin</a></li>
-				<li>
-					<a href="https://stackoverflow.com/users/12661546/t%ce%9bh%ce%9bzz%c3%98t"
-						>StackOverflow</a
-					>
-				</li>
-				<li><a href="/contact">Contact me</a></li>
+				<li><span>Links</span></li>
+				{#each links as link}
+					<li><a target="_blank" href={link.href}>{link.name}</a></li>
+				{/each}
 			</ul>
 			<ul>
 				<li><span>Technologies</span></li>
@@ -61,20 +82,25 @@
 						<input
 							type="text"
 							placeholder="Your name"
-							class="border-b border-neutral-300 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
 						/>
 						<input
 							type="email"
 							placeholder="Email address"
-							class="border-b border-neutral-300 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
 						/>
 						<textarea
 							placeholder="Your message"
-							class="border-b border-neutral-300 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 resize-x-none"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700 resize-x-none"
 							cols="1"
 						></textarea>
 						<div>
-							<button type="submit" class="bg-black hover:bg-neutral-800 rounded text-white py-1 px-3 cursor-pointer"> Send </button>
+							<button type="submit" class={
+								cn(
+									'bg-black hover:bg-neutral-800 rounded text-white py-1 px-3 cursor-pointer dark:bg-neutral-300 dark:hover:bg-neutral-400 dark:text-black',
+									forcedDarkMode && 'bg-neutral-300 hover:bg-neutral-400 text-black'
+								)
+							}> Send </button>
 						</div>
 					</form>
 				</li>
@@ -96,6 +122,11 @@
 	.footer-block ul li:first-child {
 		font-weight: 600;
 		color: var(--color-dark);
+	}
+
+
+	.forcedDarkMode.footer-block ul li:first-child {
+		color: #dbdbdb;
 	}
 
 	.footer-block ul li {

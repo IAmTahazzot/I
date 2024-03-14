@@ -4,6 +4,9 @@ export default {
 	content: ['./src/**/*.svelte'],
 	theme: {
 		extend: {
+			backgroundColor: {
+				'dark': '#09090A'
+			},
 			fontFamily: {
 				'display': ['Plus Jakarta Sans Variable', 'sans-serif'],
 				'body': ['Inter Variable', 'sans-serif'],

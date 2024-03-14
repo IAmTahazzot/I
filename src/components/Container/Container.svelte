@@ -6,7 +6,7 @@
 
 <div class={
   cn(
-    'mx-5 2xl:max-w-[90%]',
+    'mx-5 2xl:max-w-[90%] 2xl:mx-auto',
     className
   )
 }>

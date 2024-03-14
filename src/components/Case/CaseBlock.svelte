@@ -1,15 +1,23 @@
 <script lang="ts">
+	import { cn } from "$lib/utils";
+
 	export let slug: string;
 	export let clientName: string;
 	export let title: string;
 	export let thumbnail: string;
 	export let date: Date;
+  export let forcedDarkMode: boolean = false;
 </script>
 
 <a href={slug} class="h-[90vh] flex flex-col anim-hover">
   <div class='flex-1 overflow-hidden relative rounded-xl'>
     <img src={thumbnail} alt="Case" class="w-full h-full object-cover " />
-    <div class='absolute flex items-center justify-center h-52 w-52 top-1/2 left-1/2 bg-white rounded-full z-10 anim-view-case'>
+    <div class={
+      cn(
+        'absolute flex items-center justify-center h-52 w-52 top-1/2 left-1/2 bg-white text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 rounded-full z-10 anim-view-case',
+        forcedDarkMode && 'bg-neutral-800 text-neutral-200'
+      )
+    }>
       <span class='font-medium text-[18px]'>View Case</span> 
     </div>
   </div>

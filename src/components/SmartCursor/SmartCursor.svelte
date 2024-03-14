@@ -32,9 +32,9 @@
         e.target instanceof HTMLButtonElement ||
         e.target instanceof HTMLInputElement ||
         e.target instanceof Element && e.target.closest('a') ||
-        e.target instanceof Element && e.target.closest('ul')
+        e.target instanceof Element && e.target.closest('ul') ||
+				e.target instanceof Element && e.target.hasAttribute('data-smart-cursor')
       ) {
-        console.log('grow')
         grow = true;
       } else {
         grow = false;

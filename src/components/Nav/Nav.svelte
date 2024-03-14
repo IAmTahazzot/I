@@ -27,7 +27,7 @@
 		}
 	];
 
-	console.log($page.route.id);
+  export let forcedDarkMode: boolean = false;
 </script>
 
 <nav class="grid grid-cols-2 h-12">
@@ -36,13 +36,14 @@
 			{#each navigations as navigation}
 				<li>
 					{#if navigation.path === '/'}
-						<a class="text-xs font-bold font-body" href={navigation.path}>
-							<HomeIcon isActive={$page.route.id === '/'} />
+						<a class="text-xs font-bold font-body " href={navigation.path}>
+							<HomeIcon isActive={$page.route.id === '/'} forcedDarkMode={forcedDarkMode} />
 						</a>
 					{:else}
 						<a
 							class={cn(
 								'text-xs font-bold font-body anim-border-bottom',
+								forcedDarkMode && 'text-white',
 								$page.route.id === navigation.path && 'active'
 							)}
 							href={navigation.path}
@@ -56,7 +57,12 @@
 	</div>
 	<div class="self-center justify-self-end">
 		<div class="flex items-center justify-center gap-x-4">
-			<a href="/my-story" class="text-xs font-bold font-body anim-border-bottom">My Story</a>
+			<a href="/my-story" class={
+				cn(
+					'text-xs font-bold font-body anim-border-bottom',
+					forcedDarkMode && 'text-white',
+				)
+			}>My Story</a>
 			<ThemeToggle />
 		</div>
 	</div>

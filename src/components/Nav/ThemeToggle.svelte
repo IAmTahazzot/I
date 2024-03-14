@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	let theme: 'light' | 'dark' = 'light';
 	let mounted: boolean = false;
+
+	const darkModeRoutes: string[] = ['/contact', '/cases']
+	const forcedDarkMode = darkModeRoutes.includes($page.route.id || '')
 
 	onMount(() => {
 		const savedTheme = localStorage.getItem('theme');
@@ -15,8 +19,19 @@
 
 	const changeTheme = () => {
 		theme = theme === 'light' ? 'dark' : 'light';
-		document.documentElement.classList.toggle('dark');
-		document.documentElement.style.colorScheme = theme;
+
+		if (theme === 'dark' && document.documentElement.classList.contains('dark') === false){
+			document.documentElement.classList.remove('light');
+			document.documentElement.classList.add('dark');
+			document.documentElement.style.colorScheme = 'dark';
+		}
+
+		if (theme === 'light' && document.documentElement.classList.contains('light') === false){
+			document.documentElement.classList.remove('dark');
+			document.documentElement.classList.add('light');
+			document.documentElement.style.colorScheme = 'light';
+		}
+
 		localStorage.setItem('theme', theme);
 	};
 </script>
@@ -24,9 +39,18 @@
 <button
 	on:click={changeTheme}
 	class={cn('opacity-0 transition-opacity duration-300 group/theme', mounted && 'opacity-100')}
+	disabled={forcedDarkMode}
+	title={forcedDarkMode ? 'This page is meant to be viewed in dark mode' : ''}
+	aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
 >
 	<svg
-		class="group-hover/theme:rotate-180 transition-transform duration-300"
+		class={
+			cn(
+				'transition-transform duration-300',
+				!(forcedDarkMode) && 'group-hover/theme:rotate-180',
+				forcedDarkMode && 'opacity-50'
+			)
+		}
 		width="18"
 		height="18"
 		viewBox="0 0 18 18"
