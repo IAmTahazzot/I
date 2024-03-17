@@ -34,7 +34,7 @@ q {
 	font-family: 'Wrong Free', sans-serif;
 }
 
-.text p > div {
+.text p > div , .text p{
 		background: linear-gradient(
 			to right,
 			rgb(255, 255, 255) 50%,

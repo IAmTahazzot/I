@@ -14,11 +14,9 @@
 
 	onMount(() => {
 		gsap.config({ trialWarn: false });
-		console.clear();
-		gsap.registerPlugin(ScrollTrigger, SplitText);
-		const split = new SplitText('p', { type: 'lines' });
+		gsap.registerPlugin(ScrollTrigger);
 
-		split.lines.forEach((target) => {
+		document.querySelectorAll('p').forEach((target) => {
 			gsap.to(target, {
 				backgroundPositionX: 0,
 				ease: 'none',
@@ -35,7 +33,7 @@
 			if (!document) {
 				return;
 			}
-			
+
 			if (e.key === 'f') {
 				if (isFullScreen) {
 					document.exitFullscreen();
@@ -58,7 +56,7 @@
 	<title>Once upon a time...</title>
 	<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 	<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-	<script src="/js/splitText.js"></script>
+	<!-- <script src="/js/splitText.js"></script> -->
 </svelte:head>
 
 <div class="bg-dark min-h-screen text-neutral-200 text-[18px] text">
