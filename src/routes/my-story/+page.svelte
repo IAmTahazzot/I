@@ -86,7 +86,7 @@
 		font-family: 'Wrong Free';
 		font-style: normal;
 		font-weight: 400;
-		src: url('fonts/Wrong Free Trial.ttf') format('truetype');
+		src: url('fonts/WrongFreeTrial.ttf') format('truetype');
 	}
 
 	:global(.font-wrong-free) {
