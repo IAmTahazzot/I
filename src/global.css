@@ -3,49 +3,75 @@
 @tailwind utilities;
 
 body {
-  height: 100%;
-  background-color: var(--color-white);
+	height: 100%;
+	background-color: var(--color-white);
 }
 
 q {
-  font-family: monospace;
-  background-color: #000;
-  padding: 1em;
-  display: block;
-  color: #cecece;
-  margin: 1em 0;
-  border-radius: 1em;
+	font-family: monospace;
+	background-color: #000;
+	padding: 1em;
+	display: block;
+	color: #cecece;
+	margin: 1em 0;
+	border-radius: 1em;
 }
 
 .advice {
-  background-color: rgb(28, 28, 32);
-  color: white;
-  padding: 1em;
+	background-color: rgb(28, 28, 32);
+	color: white;
+	padding: 1em;
+}
+
+@font-face {
+	font-family: 'Wrong Free';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/WrongFreeTrial.ttf') format('truetype');
+}
+
+.font-wrong-free {
+	font-family: 'Wrong Free', sans-serif;
+}
+
+.text p > div {
+		background: linear-gradient(
+			to right,
+			rgb(255, 255, 255) 50%,
+			rgb(37, 37, 37) 50%
+		);
+		background-size: 200% 100%;
+		background-position-x: 100%;
+		color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+		font-size: 20px;
+
 }
 
 /* create custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-white);
+	background: var(--color-white);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-dark);
+	background: var(--color-dark);
 }
 
 @layer base {
-  :root {
-    --color-white: #fff;
-    --color-black: #000;
-    --color-dark: #1e1f24;
-  }
+	:root {
+		--color-white: #fff;
+		--color-black: #000;
+		--color-dark: #1e1f24;
+	}
 
-  .dark {
-    --color-white: #000;
-    --color-black: #e0e0e0;
-    --color-dark: #dbdbdb;
-  }
+	.dark {
+		--color-white: #000;
+		--color-black: #e0e0e0;
+		--color-dark: #dbdbdb;
+	}
 }

@@ -58,7 +58,7 @@
 	<title>Once upon a time...</title>
 	<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 	<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-	<script src="/src/lib/splitText.js"></script>
+	<script src="src/lib/splitText.js"></script>
 </svelte:head>
 
 <div class="bg-dark min-h-screen text-neutral-200 text-[18px] text">
@@ -80,30 +80,3 @@
 		<Spacer size={70} unit='vh' />
 	</Container>
 </div>
-
-<style>
-	@font-face {
-		font-family: 'Wrong Free';
-		font-style: normal;
-		font-weight: 400;
-		src: url('fonts/WrongFreeTrial.ttf') format('truetype');
-	}
-
-	:global(.font-wrong-free) {
-		font-family: 'Wrong Free', sans-serif;
-	}
-
-	:global(.text p > div) {
-		background: linear-gradient(
-			to right,
-			rgb(255, 255, 255) 50%,
-			rgb(37, 37, 37) 50%
-		);
-		background-size: 200% 100%;
-		background-position-x: 100%;
-		color: transparent;
-		background-clip: text;
-		-webkit-background-clip: text;
-		font-size: 20px;
-	}
-</style>
