@@ -9,5 +9,7 @@
 
 <Container>
   <Nav />
-  <h1>Labs</h1>
+  <h1>
+    Under maintenance - Please excuse the mess (I'll update it in May 2024)
+  </h1>
 </Container>

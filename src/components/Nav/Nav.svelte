@@ -42,8 +42,8 @@
 					{:else}
 						<a
 							class={cn(
-								'text-xs font-bold font-body anim-border-bottom',
-								forcedDarkMode && 'text-white',
+								'text-xs font-bold font-body anim-border-bottom dark:text-neutral-200',
+								forcedDarkMode && 'text-neutral-200',
 								$page.route.id === navigation.path && 'active'
 							)}
 							href={navigation.path}
@@ -59,8 +59,8 @@
 		<div class="flex items-center justify-center gap-x-4">
 			<a data-sveltekit-reload href="/my-story" class={
 				cn(
-					'text-xs font-bold font-body anim-border-bottom',
-					forcedDarkMode && 'text-white',
+					'text-xs font-bold font-body anim-border-bottom dark:text-neutral-200',
+					forcedDarkMode && 'text-neutral-200',
 				)
 			}>My Story</a>
 			<ThemeToggle />

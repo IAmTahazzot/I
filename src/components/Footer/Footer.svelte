@@ -46,7 +46,7 @@
 
 		<div class={
 			cn(
-				'footer-block py-5 border-t border-b border-neutral-300',
+				'footer-block py-5 border-t border-b border-neutral-300 dark:border-neutral-800',
 				forcedDarkMode && 'border-neutral-800 forcedDarkMode'
 			)
 		}>

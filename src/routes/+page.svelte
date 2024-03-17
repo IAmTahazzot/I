@@ -16,7 +16,7 @@
 	<title>I&apos;M Tahazzot</title>
 </svelte:head>
 
-<div class="h-[1800px] cover-bg">
+<div class="h-[1800px] cover-bg dark:bg-[#09090A]">
 	<Container>
 		<Nav />
 		<Hello />

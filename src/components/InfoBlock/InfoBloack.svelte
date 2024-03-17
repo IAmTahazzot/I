@@ -16,7 +16,7 @@
 		<div class="basis-[27%]">
 			{#if type === 'bullet point'}
 				<div class="flex items-center gap-x-2 title-area">
-					<div class="h-2 w-2 rounded-full bg-black"></div>
+					<div class="h-2 w-2 rounded-full bg-black dark:bg-white"></div>
 					<span class="text-sm">{title}</span>
 				</div>
 			{:else}
@@ -24,7 +24,7 @@
 			{/if}
 		</div>
 		<div class="flex-1 description">
-			<div class="text-[35px] font-medium leading-[47px] tracking-tighter space-y-8">
+			<div class="text-[35px] font-medium leading-[47px] tracking-tighter space-y-8 dark:text-neutral-100">
 				{@html description}
 			</div>
 
@@ -32,7 +32,7 @@
 				<div
 					class={
 						cn(
-							'relative border h-14 w-fit flex items-center justify-center rounded-full group/link overflow-hidden mt-20 border-black',
+							'relative border h-14 w-fit flex items-center justify-center rounded-full group/link overflow-hidden mt-20 border-black dark:border-neutral-100',
 							forcedDarkMode && 'border-white',
 						)
 					}
@@ -42,7 +42,7 @@
 						<div class="flex items-center justify-center h-full px-6">Let&apos;s Connect</div>
 						<a href={`mailto:${MAIL}`} class={
 							cn(
-								'flex items-center justify-center h-full bg-black text-white px-6',
+								'flex items-center justify-center h-full bg-black text-white px-6 dark:bg-white dark:text-black',
 								forcedDarkMode && 'bg-white text-black',
 							)
 						}>

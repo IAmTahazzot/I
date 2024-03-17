@@ -33,12 +33,12 @@
 </svelte:head>
 
 <div>
-	<div class="absolute z-[-1] top-0 left-0 w-full h-screen bg-[#C2D6F2] about-cover-bg pointer-events-none"></div>
+	<div class="absolute z-[-1] top-0 left-0 w-full h-screen bg-[#C2D6F2] dark:bg-[#09090A] about-cover-bg pointer-events-none"></div>
 	<div class="absolute z-0 -top-10 left-0 w-full h-full flex justify-center pointer-events-none">
 		<svg class="anim-draw" viewBox="0 0 614 769" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
 				d="m267.96.13C388.28,449.15,48.58,546.84,3.82,402.23-40.94,257.63,380.42,93.92,458.27,232.53c40.56,72.21-98.7,240.6-172.15,287.65,134.28-34.43,326.38,62.8,326.38,247.8"
-				stroke="#2E2E2E"
+				class="stroke-[#2E2E2E] dark:stroke-[#C2D6F2]"
 			></path>
 		</svg>
 		<svg
@@ -50,7 +50,7 @@
 		>
 			<path
 				d="M0.519532 0.450684C1.51953 3.45068 3.51953 5.45068 6.51953 6.45068C3.51953 7.45068 1.51953 9.45068 0.519532 12.4507"
-				stroke="#2E2E2E"
+				class="stroke-[#2E2E2E] dark:stroke-[#C2D6F2]"
 				stroke-linejoin="bevel"
 			></path>
 		</svg>
@@ -60,7 +60,7 @@
 		<Nav />
 		<div class="grid grid-cols-[20%_1fr_10%] items-start mt-[25vh]">
 			<div class="flex items-center gap-x-1">
-				<div class="h-2 w-2 rounded-lg bg-black"></div>
+				<div class="h-2 w-2 rounded-lg bg-black dark:bg-neutral-100"></div>
 				<p class="font-semibold text-sm">I&apos;m</p>
 			</div>
 			<div>
