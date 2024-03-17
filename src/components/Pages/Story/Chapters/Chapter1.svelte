@@ -27,20 +27,22 @@
 
 	<p>
 		Where I was born and raised, people in the society strugling to survive let
-		alone to educate or tech well manner to their children. Where on
-		the other part of the world, people are living in decent lifestyle,
-		educating their kids well, teching them manners and so on. I'm not
-		complaining about them. It is understandable that some of us are just born
-		to suffer! It's not their fault. It's just the way it is.
+		alone to educate or tech well manner to their children. Where on the other
+		part of the world, people are living in decent lifestyle, educating their
+		kids well, teching them manners and so on. I'm not complaining about them.
+		It is understandable that some of us are just born to suffer! It's not their
+		fault. It's just the way it is.
 	</p>
 
-	<p>
-		<q>**** life, Now... I don't complain that someone can have luxury life
-			(good for them), it's more I like to call "Universal Balance". I mean not
+	<q>
+		<p>
+			**** life, Now... I don't complain that someone can have luxury life (good
+			for them), it's more I like to call "Universal Balance". I mean not
 			everyone can expect to be in a good family, in a good society, in a good
-			environment, in a beautiful place, being beautiful or tall, handsome. None of it was our choice!</q
-		>
-	</p>
+			environment, in a beautiful place, being beautiful or tall, handsome. None
+			of it was our choice!
+		</p>
+	</q>
 
 	<p class="advice">
 		So, please don't ever Judge anyone. You don't know their story!

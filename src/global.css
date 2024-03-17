@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	height: 100%;
-	background-color: var(--color-white);
-}
-
-q {
-	font-family: monospace;
-	background-color: #000;
-	padding: 1em;
-	display: block;
-	color: #cecece;
-	margin: 1em 0;
-	border-radius: 1em;
-}
-
-.advice {
-	background-color: rgb(28, 28, 32);
-	color: white;
-	padding: 1em;
-}
-
 @font-face {
 	font-family: 'Wrong Free';
 	font-style: normal;
@@ -34,18 +13,66 @@ q {
 	font-family: 'Wrong Free', sans-serif;
 }
 
+body {
+	height: 100%;
+	background-color: var(--color-white);
+}
+
+
+.advice {
+	background-color: rgb(28, 28, 32);
+	color: white;
+	padding: 1em;
+}
+
+
 .animate-line {
-	background: linear-gradient(
-		to right,
-		rgb(255, 255, 255) 50%,
-		rgb(37, 37, 37) 50%
-	);
 	background-size: 200% 100%;
 	background-position-x: 100%;
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
 	font-size: 20px;
+}
+
+
+.animate-line {
+	background-image: linear-gradient(
+		to right,
+		rgb(255, 255, 255) 50%,
+		rgb(37, 37, 37) 50%
+	);
+}
+
+.text-extreme-emotion,
+.text-extreme-emotion > div {
+	background-image: linear-gradient(
+		to right,
+		#ff5a5a 50%,
+		rgb(37, 37, 37) 50%
+	);
+	background-clip: text;
+}
+
+.quote {
+	padding: 2em 3em;
+	position: relative;
+	font-style: italic;
+	position: relative;
+}
+
+.quote::before,
+.quote::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.quote::before {
+	height: 100%;
+	width: 3px;
+	background-color: #38ff9b;
 }
 
 /* create custom scrollbar */

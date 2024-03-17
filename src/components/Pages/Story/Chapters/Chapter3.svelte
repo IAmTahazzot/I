@@ -18,7 +18,7 @@
 		each others on study. everything was kind of okay. But guess what?
 	</p>
 
-	<p class="text-red-400 font-mono">This is where everything got screwed up.</p>
+	<p class="text-extreme-emotion">This is where everything got screwed up.</p>
 
 	<p>
 		I was coming back from college to home & what I discovered was that my
@@ -28,8 +28,9 @@
 		got!
 	</p>
 
-	<p>
-		<q>It was like a FULL STOP in my story. Everything is on except you!</q>
+	<p class="text-extreme-emotion">
+		It was like a FULL STOP in my story. It's like Everything is moving except
+		me!
 	</p>
 
 	<p>
@@ -41,10 +42,10 @@
 		medication and hospital visits. yah, F*** life.
 	</p>
 
-	<p class="text-red-400">
-		I hate this two things most in my whole life. When I miss here and when I
-		waiting in hospital for the doctor. Trust me... It feels like I can't
-		explain.
+	<p class="text-extreme-emotion">
+		I hate this two things most in my whole life. When I miss someone I care and
+		when I waiting in hospital for the doctor. Trust me... It's when you need to
+		take deep breathe because it's even hard to breathe
 	</p>
 	<p>
 		Oh, Other than that, right before the college, I meet someone. Someone who I
@@ -53,16 +54,16 @@
 		part. I doesn't feels right to share this part of my life. I'm sorry.
 	</p>
 
-	<p class="text-red-400">
+	<p class="text-extreme-emotion">
 		Soooo? At this point everything I cared, loved, and wanted to do was gone.
 	</p>
 	<p>
 		I remember the quote from "Man's search for meaning" by "Viktor E. Frankl"
 		that
-		<q>
-			When we are no longer able to change a situation, we are challenged to
-			change ourselves.
-		</q>
+	</p>
+	<p class="quote">
+		When we are no longer able to change a situation, we are challenged to
+		change ourselves.
 	</p>
 	<p>
 		Now I'm just desparately tring to find a reason to live and even to get up
