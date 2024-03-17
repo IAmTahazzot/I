@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	:root {
+		--color-white: #fff;
+		--color-black: #000;
+		--color-dark: #1e1f24;
+		--bg-body: #fff;
+	}
+
+	.dark {
+		--bg-body: #09090A;
+		--color-white: #000;
+		--color-black: #e0e0e0;
+		--color-dark: #dbdbdb;
+	}
+}
+
 @font-face {
 	font-family: 'Wrong Free';
 	font-style: normal;
@@ -15,16 +31,14 @@
 
 body {
 	height: 100%;
-	background-color: var(--color-white);
+	background-color: var(--bg-body);
 }
-
 
 .advice {
 	background-color: rgb(28, 28, 32);
 	color: white;
 	padding: 1em;
 }
-
 
 .animate-line {
 	background-size: 200% 100%;
@@ -86,18 +100,4 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	background: var(--color-dark);
-}
-
-@layer base {
-	:root {
-		--color-white: #fff;
-		--color-black: #000;
-		--color-dark: #1e1f24;
-	}
-
-	.dark {
-		--color-white: #000;
-		--color-black: #e0e0e0;
-		--color-dark: #dbdbdb;
-	}
 }

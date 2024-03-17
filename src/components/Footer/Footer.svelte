@@ -22,7 +22,7 @@
 	<div
 		class={
 			cn(
-				'max-w-[980px] mx-auto text-xs -tracking-[0.12px] leading-4 text-neutral-500 dark:text-neutral-400 font-inter',
+				'mx-5 max-w-[980px] lg:mx-auto text-xs -tracking-[0.12px] leading-4 text-neutral-500 dark:text-neutral-400 font-inter',
 				forcedDarkMode && 'text-neutral-400'
 			)
 		}
@@ -46,7 +46,8 @@
 
 		<div class={
 			cn(
-				'footer-block py-5 border-t border-b border-neutral-300 dark:border-neutral-800',
+				'footer-block',
+				'py-5 border-t border-b border-neutral-300 dark:border-neutral-800',
 				forcedDarkMode && 'border-neutral-800 forcedDarkMode'
 			)
 		}>
@@ -82,16 +83,16 @@
 						<input
 							type="text"
 							placeholder="Your name"
-							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
 						/>
 						<input
 							type="email"
 							placeholder="Email address"
-							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
 						/>
 						<textarea
 							placeholder="Your message"
-							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700 resize-x-none"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700 resize-x-none"
 							cols="1"
 						></textarea>
 						<div>
@@ -117,6 +118,19 @@
 	.footer-block {
 		display: grid;
 		grid-template-columns: repeat(3, 23%) 1fr;
+	}
+
+	@media screen and (max-width: 768px) {
+		.footer-block {
+			grid-template-columns: repeat(2, 50%);
+			row-gap: 2rem;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.footer-block {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.footer-block ul li:first-child {

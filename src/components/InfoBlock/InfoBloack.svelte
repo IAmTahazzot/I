@@ -12,8 +12,8 @@
 </script>
 
 <div class={cn('flex items-center', className)}>
-	<div class="flex w-full font-inter">
-		<div class="basis-[27%]">
+	<div class="flex flex-col lg:flex-row w-full font-inter">
+		<div class="basis-[100%] lg:basis-[27%] mb-4 lg:mb-0">
 			{#if type === 'bullet point'}
 				<div class="flex items-center gap-x-2 title-area">
 					<div class="h-2 w-2 rounded-full bg-black dark:bg-white"></div>
@@ -24,7 +24,7 @@
 			{/if}
 		</div>
 		<div class="flex-1 description">
-			<div class="text-[35px] font-medium leading-[47px] tracking-tighter space-y-8 dark:text-neutral-100">
+			<div class="text-[28px] leading-[38px] lg:text-[35px] font-medium lg:leading-[47px] tracking-tighter space-y-8 dark:text-neutral-100">
 				{@html description}
 			</div>
 
