@@ -58,7 +58,7 @@
 	<title>Once upon a time...</title>
 	<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 	<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-	<script src="src/lib/splitText.js"></script>
+	<script src="/js/splitText.js"></script>
 </svelte:head>
 
 <div class="bg-dark min-h-screen text-neutral-200 text-[18px] text">
