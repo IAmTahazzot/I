@@ -34,19 +34,18 @@ q {
 	font-family: 'Wrong Free', sans-serif;
 }
 
-.text p > div , .text p{
-		background: linear-gradient(
-			to right,
-			rgb(255, 255, 255) 50%,
-			rgb(37, 37, 37) 50%
-		);
-		background-size: 200% 100%;
-		background-position-x: 100%;
-		color: transparent;
-		background-clip: text;
-		-webkit-background-clip: text;
-		font-size: 20px;
-
+.animate-line {
+	background: linear-gradient(
+		to right,
+		rgb(255, 255, 255) 50%,
+		rgb(37, 37, 37) 50%
+	);
+	background-size: 200% 100%;
+	background-position-x: 100%;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	font-size: 20px;
 }
 
 /* create custom scrollbar */

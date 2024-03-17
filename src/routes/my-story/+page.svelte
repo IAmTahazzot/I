@@ -9,6 +9,7 @@
 	import Chapter3 from '../../components/Pages/Story/Chapters/Chapter3.svelte';
 	import Chapter4 from '../../components/Pages/Story/Chapters/Chapter4.svelte';
 	import Chapter5 from '../../components/Pages/Story/Chapters/Chapter5.svelte';
+	import { SplitText } from '$lib/splitText'
 
 	let isFullScreen = false;
 
@@ -16,7 +17,13 @@
 		gsap.config({ trialWarn: false });
 		gsap.registerPlugin(ScrollTrigger);
 
-		document.querySelectorAll('p').forEach((target) => {
+		const lines: any[] = []
+		document.querySelectorAll('p').forEach(p => {
+			const split = new SplitText(p);
+			lines.push(...split.lines);
+		});
+
+		lines.forEach((target) => {
 			gsap.to(target, {
 				backgroundPositionX: 0,
 				ease: 'none',
