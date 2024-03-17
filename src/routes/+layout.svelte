@@ -8,4 +8,7 @@
 <div id='app'>
   <slot></slot>
   <SmartCursor />
+  <div class='bg-black p-1 fixed bottom-0 left-0 w-full text-neutral-300 text-sm'>
+    Under maintenance - Please excuse the mess
+  </div>
 </div>
