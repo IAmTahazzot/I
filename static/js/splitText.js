@@ -372,7 +372,6 @@
 		S = /(?:\r|\n|\t\t)/g,
 		_ = /(?:\s\s+)/g,
 		m = String.fromCharCode(160),
-		l = 'SplitText',
 		d = q(103, 114, 101, 101, 110, 115, 111, 99, 107, 46, 99, 111, 109),
 		a = q(103, 115, 97, 112, 46, 99, 111, 109),
 		p = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}:?\d*$/,
@@ -568,42 +567,8 @@
 				-1 < --F;
 
 			)
-				if (-1 !== D.indexOf(t[F])) return !0;
-			return (
-				e ||
-				!setTimeout(function () {
-					u &&
-						(window.location.href =
-							q(104, 116, 116, 112, 115, 58, 47, 47) +
-							d +
-							q(
-								47,
-								114,
-								101,
-								113,
-								117,
-								105,
-								114,
-								101,
-								115,
-								45,
-								109,
-								101,
-								109,
-								98,
-								101,
-								114,
-								115,
-								104,
-								105,
-								112,
-								47
-							) +
-							'?plugin=' +
-							l +
-							'&source=trial');
-				}, 4e3)
-			);
+			if (-1 !== D.indexOf(t[F])) return !0;
+			return e;
 		})('undefined' != typeof window ? window.location.host : ''),
 		f =
 			(((o = SplitText.prototype).split = function split(D) {
