@@ -1,13 +1,109 @@
-<script lang='ts'>
-  import Container from "../../components/Container/Container.svelte";
-  import Nav from "../../components/Nav/Nav.svelte";
+<script lang="ts">
+	import Container from '../../components/Container/Container.svelte';
+	import StoryHome from '../../components/Pages/Story/StoryHome.svelte';
+	import StoryControl from '../../components/Pages/Story/StoryControl.svelte';
+	import Spacer from '../../components/Container/Spacer.svelte';
+	import Chapter1 from '../../components/Pages/Story/Chapters/Chapter1.svelte';
+	import { onMount } from 'svelte';
+	import Chapter2 from '../../components/Pages/Story/Chapters/Chapter2.svelte';
+	import Chapter3 from '../../components/Pages/Story/Chapters/Chapter3.svelte';
+	import Chapter4 from '../../components/Pages/Story/Chapters/Chapter4.svelte';
+	import Chapter5 from '../../components/Pages/Story/Chapters/Chapter5.svelte';
+
+	let isFullScreen = false;
+
+	onMount(() => {
+		gsap.config({ trialWarn: false });
+		console.clear();
+		gsap.registerPlugin(ScrollTrigger, SplitText);
+		const split = new SplitText('p', { type: 'lines' });
+
+		split.lines.forEach((target) => {
+			gsap.to(target, {
+				backgroundPositionX: 0,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: target,
+					scrub: 1,
+					start: 'top center',
+					end: 'bottom center'
+				}
+			});
+		});
+
+		window.addEventListener('keydown', (e) => {
+			if (!document) {
+				return;
+			}
+			
+			if (e.key === 'f') {
+				if (isFullScreen) {
+					document.exitFullscreen();
+					isFullScreen = false;
+				} else {
+					document.documentElement.requestFullscreen();
+					isFullScreen = true;
+				}
+			}
+
+			if (e.key === 'Escape' && isFullScreen) {
+				document.exitFullscreen();
+				isFullScreen = false;
+			}
+		});
+	});
 </script>
 
 <svelte:head>
-  <title>Once upon a time: ...</title>
+	<title>Once upon a time...</title>
+	<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+	<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+	<script src="/src/lib/splitText.js"></script>
 </svelte:head>
 
-<Container>
-  <Nav />
-  <h1>Write your story here...</h1>
-</Container>
+<div class="bg-dark min-h-screen text-neutral-200 text-[18px] text">
+	<Container>
+		<StoryControl />
+		<Spacer size={70} />
+		<StoryHome />
+
+		<Spacer size={100} unit="vh" />
+		<Chapter1 />
+		<Spacer size={70} unit="vh" />
+		<Chapter2 />
+		<Spacer size={70} unit='vh' />
+		<Chapter3 />
+		<Spacer size={70} unit='vh' />
+		<Chapter4 />
+		<Spacer size={70} unit='vh' />
+		<Chapter5 />
+		<Spacer size={70} unit='vh' />
+	</Container>
+</div>
+
+<style>
+	@font-face {
+		font-family: 'Wrong Free';
+		font-style: normal;
+		font-weight: 400;
+		src: url('fonts/Wrong Free Trial.ttf') format('truetype');
+	}
+
+	:global(.font-wrong-free) {
+		font-family: 'Wrong Free', sans-serif;
+	}
+
+	:global(.text p > div) {
+		background: linear-gradient(
+			to right,
+			rgb(255, 255, 255) 50%,
+			rgb(37, 37, 37) 50%
+		);
+		background-size: 200% 100%;
+		background-position-x: 100%;
+		color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+		font-size: 20px;
+	}
+</style>

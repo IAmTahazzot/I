@@ -59,9 +59,9 @@
 									new Date().toLocaleDateString('en-US')
 										? 'Today'
 										: new Date(mail.timestamp).toLocaleTimeString('en-US', {
-												hour: 'numeric',
-												minute: 'numeric',
-												hour12: true
+												month: 'short',
+												day: 'numeric',
+												dayPeriod: 'short'
 											})}
 								</h3>
 							</div>

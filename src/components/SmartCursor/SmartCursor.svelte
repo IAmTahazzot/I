@@ -78,4 +78,8 @@
 	:global(a) {
 		cursor: none;
 	} */
+
+	:global([data-smart-cursor]) {
+		cursor: pointer;
+	}
 </style>

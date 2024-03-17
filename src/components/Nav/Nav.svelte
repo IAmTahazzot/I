@@ -57,7 +57,7 @@
 	</div>
 	<div class="self-center justify-self-end">
 		<div class="flex items-center justify-center gap-x-4">
-			<a href="/my-story" class={
+			<a data-sveltekit-reload href="/my-story" class={
 				cn(
 					'text-xs font-bold font-body anim-border-bottom',
 					forcedDarkMode && 'text-white',

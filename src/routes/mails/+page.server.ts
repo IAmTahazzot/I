@@ -8,8 +8,6 @@ export const actions = {
 		const data = await request.formData();
 		const pass = data.get('password');
 
-		console.log(pass, process.env.ACCESS_CODE);
-
 		if (pass !== process.env.ACCESS_CODE) {
 			return {
 				status: 200,
@@ -25,15 +23,15 @@ export const actions = {
 		const snapshot = await ref.once('value');
 		let mails = snapshot.val();
 
-    if (!mails) {
-      return {
-        status: 200,
-        body: {
-          mails: [],
-          login: true
-        }
-      }
-    }
+		if (!mails) {
+			return {
+				status: 200,
+				body: {
+					mails: [],
+					login: true
+				}
+			};
+		}
 
 		// Convert the object to an array
 		mails = Object.keys(mails).map((key) => ({
