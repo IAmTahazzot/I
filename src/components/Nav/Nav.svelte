@@ -27,17 +27,49 @@
 		}
 	];
 
-  export let forcedDarkMode: boolean = false;
+	export let forcedDarkMode: boolean = false;
+	let activeNavigation = false;
 </script>
 
-<nav class="grid grid-cols-2 h-12">
-	<div>
-		<ul class="flex items-center gap-x-6 h-full">
+<nav class="grid grid-cols-2 h-16 xs:h-12">
+	<div class="flex flex-col justify-center">
+		<button
+			on:click={() => (activeNavigation = !activeNavigation)}
+			class="xs:hidden text-white"
+		>
+			<svg height="50" width="50">
+				<circle
+					cx="25"
+					cy="25"
+					r="20"
+					stroke="white"
+					stroke-width="2"
+					fill="transparent"
+				/>
+				<circle
+					cx="20"
+					cy="25"
+					r="2"
+					stroke="white"
+					stroke-width="3"
+					fill="white"
+				/>
+				<circle
+					cx="30"
+					cy="25"
+					r="2"
+					stroke="white"
+					stroke-width="3"
+					fill="white"
+				/>
+			</svg>
+		</button>
+		<ul class="hidden xs:flex flex-col xs:flex-row items-center gap-x-6 h-full">
 			{#each navigations as navigation}
 				<li>
 					{#if navigation.path === '/'}
-						<a class="text-xs font-bold font-body " href={navigation.path}>
-							<HomeIcon isActive={$page.route.id === '/'} forcedDarkMode={forcedDarkMode} />
+						<a class="text-xs font-bold font-body" href={navigation.path}>
+							<HomeIcon isActive={$page.route.id === '/'} {forcedDarkMode} />
 						</a>
 					{:else}
 						<a
@@ -55,18 +87,62 @@
 			{/each}
 		</ul>
 	</div>
-	<div class="self-center justify-self-end">
-		<div class="flex items-center justify-center gap-x-4">
-			<a data-sveltekit-reload href="/my-story" class={
-				cn(
-					'text-xs font-bold font-body anim-border-bottom dark:text-neutral-200',
-					forcedDarkMode && 'text-neutral-200',
-				)
-			}>My Story</a>
-			<ThemeToggle />
-		</div>
+	<div class="flex items-center justify-end gap-x-4 pt-1">
+		<a
+			data-sveltekit-reload
+			href="/my-story"
+			class={cn(
+				'text-xs font-bold font-body anim-border-bottom dark:text-neutral-200',
+				forcedDarkMode && 'text-neutral-200'
+			)}>My Story</a
+		>
+		<ThemeToggle />
 	</div>
 </nav>
+
+<aside
+	class={cn(
+		'fixed top-0 left-0 w-full h-screen bg-dark z-10 -translate-x-full transition-transform duration-300',
+		activeNavigation && 'translate-x-0'
+	)}
+>
+	<ul class="flex flex-col gap-5 p-3">
+		{#each navigations as navigation, i}
+			<li>
+				<a
+					class={cn(
+						'text-5xl font-bold uppercase font-display anim-border-bottom dark:text-neutral-200 block translate-x-[-50px]  transform transition-transform duration-300',
+						activeNavigation && 'translate-x-0',
+						forcedDarkMode && 'text-neutral-200',
+						$page.route.id === navigation.path && 'active'
+					)}
+					href={navigation.path}
+					style="transition-delay: {i * 100}ms;"
+				>
+					{navigation.name}
+				</a>
+			</li>
+		{/each}
+	</ul>
+
+	<!-- cross svg -->
+	<button on:click={() => (activeNavigation = false)}>
+		<svg
+			class="absolute top-3 right-3 xs:hidden"
+			width="50"
+			height="50"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<line x1="18" y1="6" x2="6" y2="18"></line>
+			<line x1="6" y1="6" x2="18" y2="18"></line>
+		</svg>
+	</button>
+</aside>
 
 <style>
 	.anim-border-bottom {

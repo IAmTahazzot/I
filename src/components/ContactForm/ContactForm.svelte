@@ -30,9 +30,9 @@
 
 <form method="POST" action="/contact" use:enhance>
 	<div class="text-[18px]">
-		<div class="flex gap-x-7">
+		<div class="flex flex-col md:flex-row gap-7">
 			<div class="flex items-center gap-2 relative">
-				<label for="name">My name is</label>
+				<label for="name" class="basis-[100px] md:basis-auto">My name is</label>
 				<input
 					type="text"
 					id="name"
@@ -40,6 +40,7 @@
 					autocomplete="off"
 					placeholder="(ex. Anakin Skywalker)"
 					bind:value={$contactForm.name}
+					class="flex-1 lg:flex-auto"
 				/>
 				{#if $errors.name}
 					<p class="absolute left-0 -bottom-5 pointer-events-none text-red-500 mt-1 text-xs">
@@ -48,13 +49,14 @@
 				{/if}
 			</div>
 			<div class="flex items-center gap-2">
-				<label for="address">I&apos;m from</label>
+				<label for="address" class="basis-[100px] md:basis-auto">I&apos;m from</label>
 				<input
 					type="text"
 					id="address"
 					name="address"
 					placeholder="(ex. Hogwarts)"
 					bind:value={$contactForm.address}
+					class="flex-1 lg:flex-auto"
 					{...$constraints.address}
 				/>
 			</div>
@@ -172,7 +174,7 @@
 			></textarea>
 		</div>
 
-		<div class="mt-7 flex items-center gap-x-2">
+		<div class="mt-7 flex flex-col items-stretch md:flex-row md:items-center gap-x-2">
 			<label for="email">You can reach me at</label>
 			<input
 				type="text"
@@ -180,6 +182,7 @@
 				name="email"
 				placeholder="(ex. )"
 				bind:value={$contactForm.email}
+				class="flex-1 lg:flex-auto"
 			/>
 		</div>
 

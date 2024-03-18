@@ -9,7 +9,7 @@
   export let forcedDarkMode: boolean = false;
 </script>
 
-<a href={slug} class="h-[70vh] lg:h-[90vh] flex flex-col anim-hover">
+<a href={slug} class="h-[70vh] md:h-[90vh] flex flex-col anim-hover">
   <div class='flex-1 overflow-hidden relative rounded-xl'>
     <img src={thumbnail} alt="Case" class="w-full h-full object-cover " />
     <div class={
@@ -22,9 +22,9 @@
     </div>
   </div>
 	<div class="flex items-center text-[18px] mt-6 font-semibold">
-		<h3 class="hidden lg:block basis-[27%]">{clientName}</h3>
+		<h3 class="hidden md:block basis-[27%]">{clientName}</h3>
 		<h3 class="flex-1">{title}</h3>
-		<h3 class="basis-[23%]">
+		<h3 class="md:basis-[23%]">
       ({date.toLocaleString('en-US', { month: 'short' }) + ' ' + date.getFullYear()})
     </h3>
 	</div>

@@ -31,8 +31,8 @@
 	<Container className="text-white">
 		<Nav forcedDarkMode />
 		<div>
-			<div class="flex items-center mt-[30vh]">
-				<div class="flex w-full font-inter">
+			<div class="flex items-center mt-[20vh] md:mt-[30vh]">
+				<div class="flex flex-col lg:flex-row w-full font-inter">
 					<div class="basis-[15%]">
 						<div class="flex items-center gap-x-2">
 							<div class="h-2 w-2 rounded-full bg-white"></div>
@@ -40,7 +40,7 @@
 						</div>
 					</div>
 					<div class="flex-1">
-						<h1 class="text-7xl tracking-tight text-white leading-[75px]">
+						<h1 class="text-4xl md:text-6xl xl:text-7xl leading-[50px] sm:leading-[60px] md:leading-[70px] lg:leading-[75px] tracking-tight text-white">
 							Take a glimpse into my recent years of work or explore my groundbreaking AI projects.
 						</h1>
 						<div class="mt-10 flex items-center justify-start gap-x-8">

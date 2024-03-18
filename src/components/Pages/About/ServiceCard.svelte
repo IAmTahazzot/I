@@ -9,7 +9,7 @@
 
 <div class={
 	cn(
-		'grid grid-cols-[23%_35%_1fr_10%] border-t border-neutral-200 py-14 dark:border-neutral-800',
+		'grid grid-cols-1 lg:grid-cols-[23%_35%_1fr_10%] gap-y-5 border-t border-neutral-200 py-14 dark:border-neutral-800',
 		className
 	)
 }>

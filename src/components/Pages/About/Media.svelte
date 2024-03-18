@@ -9,9 +9,9 @@
   ]
 </script>
 
-<div class='h-auto xl:h-[80vh] grid grid-cols-4 gap-4'>
+<div class='h-auto xl:h-[80vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'>
   {#each media as { src }, i}
-    <div class='rounded-lg overflow-hidden bg-neutral-100'>
+    <div class='h-[80vh] md:h-auto rounded-lg overflow-hidden bg-neutral-100'>
       <video src={src} class='w-full h-full object-cover' loop muted autoplay playsinline data-sveltekit-preload-data></video>
     </div>
   {/each}

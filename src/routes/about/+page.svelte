@@ -58,13 +58,13 @@
 
 	<Container>
 		<Nav />
-		<div class="grid grid-cols-[20%_1fr_10%] items-start mt-[25vh]">
+		<div class="grid grid-cols-1 lg:grid-cols-[20%_1fr_10%] items-start mt-[25vh]">
 			<div class="flex items-center gap-x-1">
 				<div class="h-2 w-2 rounded-lg bg-black dark:bg-neutral-100"></div>
 				<p class="font-semibold text-sm">I&apos;m</p>
 			</div>
 			<div>
-				<h1 class="z-10 relative text-7xl leading-[73px] font-semibold font-inter">
+				<h1 class="z-10 relative text-6xl lg:text-7xl leading-[73px] font-semibold font-inter">
 					Building software & <br /> Exploring the planet earth
 				</h1>
 			</div>
@@ -82,7 +82,7 @@
 
 		<Spacer size={50} unit={'vh'} />
 		<div>
-			<h2 class="text-[128px] uppercase font-bold font-display tracking-tighter">Services</h2>
+			<h2 class="text-6xl sm:text-8xl lg:text-[128px] uppercase font-bold font-display tracking-tighter">Services</h2>
 			<div class="mt-10">
         <Services {services} />
       </div>

@@ -42,9 +42,11 @@
 		</div>
 	</Container>
 
-	<div class="border-y border-neutral-700 mt-16">
+	<div class="border-t xl:border-y border-neutral-700 mt-16">
 		<div class="grid grid-cols-1 xl:grid-cols-[23%_1px_1fr] xl:max-w-[1200px] xl:mx-auto">
 			<div>
+				<Container className='xl:mx-0'>
+
 				<div
 					class="flex items-center justify-between xl:flex-col xl:items-start xl:gap-y-6 max-w-[980px] mx-auto py-6 xl:py-16"
 				>
@@ -86,17 +88,22 @@
 						</a>
 					</div>
 				</div>
+				</Container>
 			</div>
 			<div class="border-b border-neutral-700 xl:border-b-0 xl:border-l"></div>
 			<div>
+				<Container>
+
 				<div class="max-w-[980px] xl:w-full mx-auto py-6 xl:py-16 xl:px-8">
-					<h2 class="text-8xl font-display font-thin uppercase tracking-tight">
+					<h2 class="text-6xl md:text-7xl lg:text-8xl font-display font-thin uppercase tracking-tight">
 						Hello <br /> Tahazzot,
 					</h2>
 
 					<Spacer size={70} />
 					<ContactForm data={data} />
 				</div>
+				</Container>
+
 			</div>
 		</div>
 	</div>

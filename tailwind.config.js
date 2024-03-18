@@ -3,7 +3,7 @@ export default {
 	darkMode: 'class',
 	content: ['./src/**/*.svelte'],
 	theme: {
-		extend: {
+		extend: {	
 			backgroundColor: {
 				'dark': '#09090A'
 			},
@@ -13,6 +13,9 @@ export default {
 
 				// others
 				'inter': ['Inter Variable', 'sans-serif'],
+			},
+			screens: {
+				'xs': '480px'
 			}
 		}
 	},
