@@ -9,7 +9,8 @@
 	import Chapter3 from '../../components/Pages/Story/Chapters/Chapter3.svelte';
 	import Chapter4 from '../../components/Pages/Story/Chapters/Chapter4.svelte';
 	import Chapter5 from '../../components/Pages/Story/Chapters/Chapter5.svelte';
-	import { SplitText } from '$lib/splitText'
+	import { SplitText } from '$lib/splitText';
+	import '@fontsource-variable/fraunces';
 
 	let isFullScreen = false;
 
@@ -17,8 +18,8 @@
 		gsap.config({ trialWarn: false });
 		gsap.registerPlugin(ScrollTrigger);
 
-		const lines: any[] = []
-		document.querySelectorAll('p').forEach(p => {
+		const lines: any[] = [];
+		document.querySelectorAll('p').forEach((p) => {
 			const split = new SplitText(p);
 			lines.push(...split.lines);
 		});
@@ -63,10 +64,12 @@
 	<title>Once upon a time...</title>
 	<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 	<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-	<!-- <script src="/js/splitText.js"></script> -->
 </svelte:head>
 
-<div class="bg-dark min-h-screen text-neutral-200 text-[18px] text">
+<div
+	id="story"
+	class="bg-dark min-h-screen text-neutral-200 text-[16px] font-serif"
+>
 	<Container>
 		<StoryControl />
 		<Spacer size={70} />
@@ -76,12 +79,18 @@
 		<Chapter1 />
 		<Spacer size={70} unit="vh" />
 		<Chapter2 />
-		<Spacer size={70} unit='vh' />
+		<Spacer size={70} unit="vh" />
 		<Chapter3 />
-		<Spacer size={70} unit='vh' />
+		<Spacer size={70} unit="vh" />
 		<Chapter4 />
-		<Spacer size={70} unit='vh' />
+		<Spacer size={70} unit="vh" />
 		<Chapter5 />
-		<Spacer size={70} unit='vh' />
+		<Spacer size={70} unit="vh" />
 	</Container>
 </div>
+
+<style>
+	:global(#story p) {
+		font-family: 'Fraunces Variable', serif;
+	}
+</style>
