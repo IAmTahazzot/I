@@ -42,23 +42,22 @@
 					cx="25"
 					cy="25"
 					r="20"
-					stroke="white"
-					stroke-width="2"
+					class='stroke-black dark:stroke-white'
+					stroke-width="1"
 					fill="transparent"
 				/>
 				<circle
 					cx="20"
 					cy="25"
 					r="2"
-					stroke="white"
+					class='stroke-black dark:stroke-white fill-black dark:fill-white'
 					stroke-width="3"
-					fill="white"
 				/>
 				<circle
 					cx="30"
 					cy="25"
 					r="2"
-					stroke="white"
+					class='stroke-black dark:stroke-white fill-black dark:fill-white'
 					stroke-width="3"
 					fill="white"
 				/>
@@ -102,7 +101,7 @@
 
 <aside
 	class={cn(
-		'fixed top-0 left-0 w-full h-screen bg-dark z-10 -translate-x-full transition-transform duration-300',
+		'fixed top-0 left-0 w-full h-screen bg-[lavender] dark:bg-dark z-10 -translate-x-full transition-transform duration-300',
 		activeNavigation && 'translate-x-0'
 	)}
 >

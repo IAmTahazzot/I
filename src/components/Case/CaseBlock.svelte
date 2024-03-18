@@ -9,7 +9,7 @@
   export let forcedDarkMode: boolean = false;
 </script>
 
-<a href={slug} class="h-[70vh] md:h-[90vh] flex flex-col anim-hover">
+<a href={slug} class="h-[60vh] sm:h-[70vh] md:h-[90vh] flex flex-col anim-hover">
   <div class='flex-1 overflow-hidden relative rounded-xl'>
     <img src={thumbnail} alt="Case" class="w-full h-full object-cover " />
     <div class={

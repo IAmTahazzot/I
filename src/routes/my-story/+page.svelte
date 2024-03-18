@@ -11,10 +11,32 @@
 	import Chapter5 from '../../components/Pages/Story/Chapters/Chapter5.svelte';
 	import { SplitText } from '$lib/splitText';
 	import '@fontsource-variable/fraunces';
+	import Lenis from '@studio-freight/lenis';
 
 	let isFullScreen = false;
 
-	onMount(() => {
+	const SmoothScroll = () => {
+		const lenis = new Lenis({
+			duration: 2,
+			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -20 * t)),
+			orientation: 'vertical', // vertical, horizontal
+			gestureOrientation: 'vertical', // vertical, horizontal, both
+			smoothWheel: true,
+			//smoothTouch: false,
+			syncTouch: true,
+			touchMultiplier: 2,
+			infinite: false
+		});
+
+		function raf(time: number) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
+		requestAnimationFrame(raf);
+	};
+
+	const TextAnimation = () => {
 		gsap.config({ trialWarn: false });
 		gsap.registerPlugin(ScrollTrigger);
 
@@ -36,7 +58,9 @@
 				}
 			});
 		});
+	};
 
+	const FullScreenMode = () => {
 		window.addEventListener('keydown', (e) => {
 			if (!document) {
 				return;
@@ -57,6 +81,12 @@
 				isFullScreen = false;
 			}
 		});
+	};
+
+	onMount(() => {
+		SmoothScroll();
+		// TextAnimation();
+		FullScreenMode();
 	});
 </script>
 
@@ -66,10 +96,7 @@
 	<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 </svelte:head>
 
-<div
-	id="story"
-	class="bg-dark min-h-screen text-neutral-200 text-[16px] font-serif"
->
+<div id="story" class="bg-dark min-h-screen text-neutral-200">
 	<Container>
 		<StoryControl />
 		<Spacer size={70} />

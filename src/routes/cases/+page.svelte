@@ -31,7 +31,7 @@
 	<Container className="text-white">
 		<Nav forcedDarkMode />
 		<div>
-			<div class="flex items-center mt-[20vh] md:mt-[30vh]">
+			<div class="flex items-center mt-[30vh]">
 				<div class="flex flex-col lg:flex-row w-full font-inter">
 					<div class="basis-[15%]">
 						<div class="flex items-center gap-x-2">
