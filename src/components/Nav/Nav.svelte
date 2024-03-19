@@ -14,10 +14,6 @@
 			path: '/cases'
 		},
 		{
-			name: 'Lab',
-			path: '/lab'
-		},
-		{
 			name: 'About',
 			path: '/about'
 		},
@@ -101,7 +97,7 @@
 
 <aside
 	class={cn(
-		'fixed top-0 left-0 w-full h-screen bg-[lavender] dark:bg-dark z-10 -translate-x-full transition-transform duration-300',
+		'fixed top-0 left-0 w-full h-screen bg-[lavender] dark:bg-dark z-[100] -translate-x-full transition-transform duration-300',
 		activeNavigation && 'translate-x-0'
 	)}
 >

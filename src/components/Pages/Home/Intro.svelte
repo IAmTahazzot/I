@@ -1,7 +1,7 @@
 <div class='w-full md:w-[600px]'>
   <table class='font-display'>
     <tbody>
-      <tr class='text-3xl font-black tracking-tight'>
+      <tr class='text-2xl md:text-3xl font-black tracking-tight'>
         <td>I‘m</td>
         <td>
           <p>A full stack developer</p>

@@ -1,17 +1,17 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
+	import '@fontsource-variable/fraunces';
+
+	import Lenis from '@studio-freight/lenis';
+
 	import Container from '../../components/Container/Container.svelte';
 	import StoryHome from '../../components/Pages/Story/StoryHome.svelte';
 	import StoryControl from '../../components/Pages/Story/StoryControl.svelte';
 	import Spacer from '../../components/Container/Spacer.svelte';
-	import Chapter1 from '../../components/Pages/Story/Chapters/Chapter1.svelte';
-	import { onMount } from 'svelte';
-	import Chapter2 from '../../components/Pages/Story/Chapters/Chapter2.svelte';
-	import Chapter3 from '../../components/Pages/Story/Chapters/Chapter3.svelte';
-	import Chapter4 from '../../components/Pages/Story/Chapters/Chapter4.svelte';
-	import Chapter5 from '../../components/Pages/Story/Chapters/Chapter5.svelte';
-	import { SplitText } from '$lib/splitText';
-	import '@fontsource-variable/fraunces';
-	import Lenis from '@studio-freight/lenis';
+	import FinalChapter from '../../components/Pages/Story/Chapters/FinalChapter.svelte';
+	import Beginning from '../../components/Pages/Story/Chapters/Beginning.svelte';
+	import Solitude from '../../components/Pages/Story/Chapters/Solitude.svelte';
 
 	let isFullScreen = false;
 
@@ -40,13 +40,8 @@
 		gsap.config({ trialWarn: false });
 		gsap.registerPlugin(ScrollTrigger);
 
-		const lines: any[] = [];
-		document.querySelectorAll('p').forEach((p) => {
-			const split = new SplitText(p);
-			lines.push(...split.lines);
-		});
 
-		lines.forEach((target) => {
+		document.querySelectorAll('p').forEach((target) => {
 			gsap.to(target, {
 				backgroundPositionX: 0,
 				ease: 'none',
@@ -54,7 +49,7 @@
 					trigger: target,
 					scrub: 1,
 					start: 'top center',
-					end: 'bottom center'
+					end: 'top top'
 				}
 			});
 		});
@@ -85,7 +80,7 @@
 
 	onMount(() => {
 		SmoothScroll();
-		// TextAnimation();
+		TextAnimation();
 		FullScreenMode();
 	});
 </script>
@@ -103,21 +98,17 @@
 		<StoryHome />
 
 		<Spacer size={100} unit="vh" />
-		<Chapter1 />
+		<Beginning />
 		<Spacer size={70} unit="vh" />
-		<Chapter2 />
+		<Solitude />
 		<Spacer size={70} unit="vh" />
-		<Chapter3 />
-		<Spacer size={70} unit="vh" />
-		<Chapter4 />
-		<Spacer size={70} unit="vh" />
-		<Chapter5 />
+		<FinalChapter />
 		<Spacer size={70} unit="vh" />
 	</Container>
 </div>
 
 <style>
-	:global(#story p) {
+	:global(#story) {
 		font-family: 'Fraunces Variable', serif;
 	}
 </style>

@@ -180,7 +180,7 @@
 				type="text"
 				id="email"
 				name="email"
-				placeholder="(ex. )"
+				placeholder="your email address"
 				bind:value={$contactForm.email}
 				class="flex-1 lg:flex-auto"
 			/>

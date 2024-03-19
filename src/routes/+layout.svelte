@@ -3,20 +3,6 @@
   import '@fontsource-variable/plus-jakarta-sans'
   import '../global.css'
 	import SmartCursor from '../components/SmartCursor/SmartCursor.svelte';
-	import { onMount } from 'svelte';
-
-  onMount(() => {
-    // keyboard shortcut to toggle fullscreen
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'f') {
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-        } else {
-          document.documentElement.requestFullscreen();
-        }
-      }
-    });
-  })
 </script>
 
 <div id='app'>

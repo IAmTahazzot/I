@@ -53,6 +53,7 @@
 					<a href={`mailto:${MAIL}`}>{MAIL}</a>
 					<div class="flex items-center gap-x-2">
 						<a
+							target="_blank"
 							href={LINKEDIN}
 							class="flex items-center justify-center h-9 w-9 rounded-full border border-neutral-600"
 						>
@@ -70,6 +71,7 @@
 							</svg>
 						</a>
 						<a
+							target="_blank"
 							href={GITHUB}
 							class="flex items-center justify-center h-9 w-9 rounded-full border border-neutral-600"
 						>

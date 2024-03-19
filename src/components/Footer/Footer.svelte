@@ -11,6 +11,69 @@
 		{ name: 'Contact me', href: '/contact' }
 	];
 
+	const growTextarea = (e: Event & { currentTarget: EventTarget & HTMLTextAreaElement }) => {
+		e.currentTarget.style.height = 'auto';
+		e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
+	};
+
+	const formData = {
+		name: '',
+		email: '',
+		message: ''
+	};
+
+	let error = '';
+	let success = '';
+	let sending = false;
+
+	const handleSubmit = async (e) => {
+		e.preventDefault()
+		sending = true
+
+		const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+		error = '' // resetting error
+
+		if (!formData.name || !formData.email) {
+			error = 'Name and email are required'
+		} else if (formData.name.length < 3) {
+			error = 'Name must be at least 3 characters'
+		} else if (!emailRegex.test(formData.email)) {
+			error = 'Invalid email'
+		}
+
+		if (error) {
+			sending = false
+			success = ''
+			return false;
+		}
+
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formData)
+			});
+
+			const data = await response.json()
+
+			if (response.ok) {
+				sending = false
+				success = data.success
+				formData.name = ''
+				formData.email = ''
+				formData.message = ''
+			} else {
+				success = ''
+				error = data.error
+			}
+		} catch (err ) {
+			console.log(err)
+			error = 'An error occurred. Please try again later'
+		}
+	}
 </script>
 
 <footer class={
@@ -79,29 +142,48 @@
 			<ul>
 				<li>Quick messages</li>
 				<li>
-					<form class="space-y-2">
+					<form method='POST' class="space-y-2" on:submit={handleSubmit}>
 						<input
 							type="text"
+							name="name"
+							bind:value={formData.name}
 							placeholder="Your name"
 							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
 						/>
 						<input
-							type="email"
+							type="text"
+							name="email"
+							bind:value={formData.email}
 							placeholder="Email address"
 							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700"
 						/>
 						<textarea
+						  on:input={(e) => {
+								growTextarea(e)
+							}}
+							bind:value={formData.message}
+						  name="message"
 							placeholder="Your message"
-							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700 resize-x-none"
+							class="border-b border-neutral-300 dark:border-neutral-500 bg-transparent w-full lg:w-4/6 py-2 outline-none focus-visible:border-neutral-500 dark:focus-visible:border-neutral-700 resize-none overflow-hidden"
 							cols="1"
 						></textarea>
+						{#if error}
+							<p class="text-red-500">{error}</p>
+						{/if}
+						{#if success}
+							<p class="text-green-500">{success}</p>
+						{/if}
 						<div>
-							<button type="submit" class={
+							<button 
+							disabled={sending}
+							type="submit" class={
 								cn(
-									'bg-black hover:bg-neutral-800 rounded text-white py-1 px-3 cursor-pointer dark:bg-neutral-300 dark:hover:bg-neutral-400 dark:text-black',
+									'bg-black hover:bg-neutral-800 rounded text-white py-1 px-3 cursor-pointer dark:bg-neutral-300 dark:hover:bg-neutral-400 dark:text-black disabled:cursor-not-allowed disabled:opacity-50',
 									forcedDarkMode && 'bg-neutral-300 hover:bg-neutral-400 text-black'
 								)
-							}> Send </button>
+							}>
+								{sending ? 'Sending...' : 'Send'}	
+						</button>
 						</div>
 					</form>
 				</li>
