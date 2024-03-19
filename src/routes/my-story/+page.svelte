@@ -3,8 +3,6 @@
 
 	import '@fontsource-variable/fraunces';
 
-	import Lenis from '@studio-freight/lenis';
-
 	import Container from '../../components/Container/Container.svelte';
 	import StoryHome from '../../components/Pages/Story/StoryHome.svelte';
 	import StoryControl from '../../components/Pages/Story/StoryControl.svelte';
@@ -14,27 +12,6 @@
 	import Solitude from '../../components/Pages/Story/Chapters/Solitude.svelte';
 
 	let isFullScreen = false;
-
-	const SmoothScroll = () => {
-		const lenis = new Lenis({
-			duration: 2,
-			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -20 * t)),
-			orientation: 'vertical', // vertical, horizontal
-			gestureOrientation: 'vertical', // vertical, horizontal, both
-			smoothWheel: true,
-			//smoothTouch: false,
-			syncTouch: true,
-			touchMultiplier: 2,
-			infinite: false
-		});
-
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-	};
 
 	const TextAnimation = () => {
 		gsap.config({ trialWarn: false });
@@ -79,7 +56,6 @@
 	};
 
 	onMount(() => {
-		SmoothScroll();
 		TextAnimation();
 		FullScreenMode();
 	});
