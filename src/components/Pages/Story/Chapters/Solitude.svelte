@@ -35,27 +35,30 @@
 	</p>
 	<ul class="list-decimal space-y-2">
 		<li><p>Good listener</p></li>
-		<li>
-			<p>Not on social media, less screen time, less content overload.</p>
-		</li>
-		<li><p>Enjoy coding and solving problems.</p></li>
-		<li>
-			<p>
-				Have good communication skills, still there's always room for
-				improvements
-			</p>
-		</li>
-		<li><p>Early to bed early to rise</p></li>
-		<li><p>Reading</p></li>
-		<li>
-			<p>
-				Traveling & exploring new place and people.(I mean, who doesn't have
-				this?)
-			</p>
-		</li>
-		<li><p>Organized, dislike messiness</p></li>
-		<li><p>Discerns whom to talk to and whom to avoid.</p></li>
-		<li><p>Always have a feeling I need to learn more and more</p></li>
+		<details>
+			<summary>Click here to see all</summary>
+			<li>
+				<p>Not on social media, less screen time, less content overload.</p>
+			</li>
+			<li><p>Enjoy coding and solving problems.</p></li>
+			<li>
+				<p>
+					Have good communication skills, still there's always room for
+					improvements
+				</p>
+			</li>
+			<li><p>Early to bed early to rise</p></li>
+			<li><p>Reading</p></li>
+			<li>
+				<p>
+					Traveling & exploring new place and people.(I mean, who doesn't have
+					this?)
+				</p>
+			</li>
+			<li><p>Organized, dislike messiness</p></li>
+			<li><p>Discerns whom to talk to and whom to avoid.</p></li>
+			<li><p>Always have a feeling I need to learn more and more</p></li>
+		</details>
 	</ul>
 
 	<div class="!mt-48">

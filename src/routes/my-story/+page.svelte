@@ -26,7 +26,7 @@
 					trigger: target,
 					scrub: 1,
 					start: 'top center',
-					end: 'top top'
+					end: 'top center'
 				}
 			});
 		});

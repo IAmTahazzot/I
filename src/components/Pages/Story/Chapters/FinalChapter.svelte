@@ -37,14 +37,17 @@
 
 <ChapterContainer>
 	<p>
-		My story is not a success story YET! The only success I can say right now is
-		that I'm still breathing and working.
+		When we were young, we used to love MANY things, little things such as toys
+		or swimming. But as we grow up, we start to love very few things or
+		precisely two or three things you can count them. For me it's only 3 things
+		- Her, Want to see the world and . Actually only 2!
 	</p>
-	<p>Never forget the priority.</p>
+	<p>
+		Second one is keeping me alive and the first one is killing me every
+		seconds, every moment. I don't know which one will win at the end!
+	</p>
 	<Spacer size={20} unit="vh" />
-	<p class="text-xl uppercase text-center">
-		[The Priority]
-	</p>
+	<p class="text-xl uppercase text-center">[The Priority]</p>
 	<p>
 		Besides all the things we've learned & seen, World Wars, Pandemics, Racism,
 		Religion, Politics, InJustice, Science, Techonology, Broken generation and
