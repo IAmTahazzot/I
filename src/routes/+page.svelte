@@ -18,4 +18,9 @@ a {
 padding: .5rem 0;
 display:block;
 }
+
+body{
+ background-color:hsl(222deg, 15%,15%);
+ color: #eee;
+}
 </style>
